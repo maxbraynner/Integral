@@ -1,5 +1,10 @@
 package br.com.calculo;
 
+/**
+ * Classe possui variavel compartilhada(Região crítica) sincronizada
+ * @author braynner
+ *
+ */
 public class Acumulador {
 
 	private static double acumulador = 0;
@@ -8,6 +13,10 @@ public class Acumulador {
 		return acumulador;
 	}
 
+	/**
+	 * Incrementa o acumulador
+	 * @param valor
+	 */
 	synchronized public static void addAcumulador(double valor) {
 		acumulador += valor;
 	}

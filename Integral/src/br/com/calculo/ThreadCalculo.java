@@ -1,5 +1,10 @@
 package br.com.calculo;
 
+/**
+ * efetua calculo da parte
+ * @author braynner
+ *
+ */
 public class ThreadCalculo implements Runnable{
 
 	private double a, largura, indice;
@@ -10,12 +15,20 @@ public class ThreadCalculo implements Runnable{
 		this.indice = indice;
 	}
 
+	/**
+	 * função da integral
+	 * @param icognita
+	 * @return
+	 */
 	private double funcao(double icognita) {
-		return 1 / (1 + icognita * icognita); // função da integral
+		return 1 / (1 + icognita * icognita);
 	}
 	
 	@Override
-	public void run() {
+	/**
+	 * efetua o calculo e adiciona ao acumulador
+	 */
+	public void run() { 
 		double icognita = a + largura * indice;
 		
 		Acumulador.addAcumulador( funcao(icognita) );
